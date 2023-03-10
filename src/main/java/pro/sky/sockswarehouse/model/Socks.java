@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import pro.sky.sockswarehouse.constant.SocksColorsTable;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Data
 @AllArgsConstructor
@@ -26,4 +27,16 @@ public class Socks {
         this.cottonPart = cottonPart;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Socks socks = (Socks) o;
+        return cottonPart == socks.cottonPart && color == socks.color;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(color, cottonPart);
+    }
 }
