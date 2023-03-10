@@ -62,6 +62,7 @@ public class SocksService {
             socks.setQuantity(socksDto.getQuantity());
         } else { // Add new socks to existing type
             socks.setQuantity(socksFound.get().getQuantity() + socks.getQuantity());
+            socks.setId(socksFound.get().getId());
         }
         socks = socksRepository.save(socks);
         Invoice invoice = new Invoice(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS), socks.getColor(),
