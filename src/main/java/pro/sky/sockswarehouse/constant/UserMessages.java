@@ -9,7 +9,8 @@ public enum UserMessages {
     SOCKS_QUANTITY_WRONG_NUMBER_EXCEPTION("Socks quantity should be more than 0"),
     INVOICE_SAVE_ERROR("Invoice didn't save in the database! Potential data integrity threat"),
     INVOICE_SAVE_SUCCESS("Invoice saved in the database successfully"),
-    USER_NOT_FOUND_EXCEPTION("User with %id% was not found in the database");
+    USER_NOT_FOUND_EXCEPTION("User with %id% was not found in the database"),
+    SOCKS_NOT_FOUND_OR_NOT_ENOUGH_QUANTITY("Such socks was not found or have not enough quantity");
 
     public final String msgText;
 

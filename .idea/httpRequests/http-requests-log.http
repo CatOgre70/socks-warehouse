@@ -1,3 +1,308 @@
+POST http://localhost:8080/api/socks/outcome
+Authorization: Basic user@gmail.com password
+Content-Type: application/json
+Content-Length: 64
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=17CDC04756A8ADEF4FEED7F9CB39AB34
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "color" : "Green",
+  "cottonPart" : 80,
+  "quantity" : 100
+}
+
+<> 2023-03-10T213044.200.json
+
+###
+
+POST http://localhost:8080/api/socks/income
+Authorization: Basic user@gmail.com password
+Content-Type: application/json
+Content-Length: 64
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=17CDC04756A8ADEF4FEED7F9CB39AB34
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "color" : "Green",
+  "cottonPart" : 80,
+  "quantity" : 300
+}
+
+<> 2023-03-10T213003.200.json
+
+###
+
+POST http://localhost:8080/api/socks/income
+Authorization: Basic admin@gmail.com password
+Content-Type: application/json
+Content-Length: 62
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=17CDC04756A8ADEF4FEED7F9CB39AB34
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "color" : "Red",
+  "cottonPart" : 90,
+  "quantity" : 100
+}
+
+<> 2023-03-10T212958.200.json
+
+###
+
+POST http://localhost:8080/api/socks/income
+Authorization: Basic admin@gmail.com password
+Content-Type: application/json
+Content-Length: 62
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=17CDC04756A8ADEF4FEED7F9CB39AB34
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "color" : "Red",
+  "cottonPart" : 90,
+  "quantity" : 100
+}
+
+<> 2023-03-10T212955.200.json
+
+###
+
+POST http://localhost:8080/api/socks/income
+Authorization: Basic user@gmail.com password
+Content-Type: application/json
+Content-Length: 64
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=158ACF226647DF2AA0266E1FF7A7EF59
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "color" : "Green",
+  "cottonPart" : 80,
+  "quantity" : 300
+}
+
+<> 2023-03-10T212936.200.json
+
+###
+
+POST http://localhost:8080/register
+Content-Type: application/json
+Content-Length: 137
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=158ACF226647DF2AA0266E1FF7A7EF59
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "user@gmail.com",
+  "password": "password",
+  "firstName":  "Ivan",
+  "lastName": "Ivanov",
+  "phone":  " +74951234567"
+}
+
+###
+
+POST http://localhost:8080/register
+Content-Type: application/json
+Content-Length: 137
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=158ACF226647DF2AA0266E1FF7A7EF59
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "user@gmail.com",
+  "password": "password",
+  "firstName":  "Ivan",
+  "lastName": "Ivanov",
+  "phone":  " +74951234567"
+}
+
+###
+
+POST http://localhost:8080/login
+Content-Type: application/json
+Content-Length: 61
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=158ACF226647DF2AA0266E1FF7A7EF59
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "admin@gmail.com",
+  "password": "password"
+}
+
+<> 2023-03-10T193408.200.json
+
+###
+
+POST http://localhost:8080/register
+Content-Type: application/json
+Content-Length: 140
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=158ACF226647DF2AA0266E1FF7A7EF59
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "admin@gmail.com",
+  "password": "password",
+  "firstName":  "Admin",
+  "lastName": "Adminov",
+  "phone":  " +74958901234"
+}
+
+###
+
+POST http://localhost:8080/register
+Content-Type: application/json
+Content-Length: 140
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=158ACF226647DF2AA0266E1FF7A7EF59
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "admin@gmail.com",
+  "password": "password",
+  "firstName":  "Admin",
+  "lastName": "Adminov",
+  "phone":  " +74958901234"
+}
+
+###
+
+POST http://localhost:8080/register
+Content-Type: application/json
+Content-Length: 137
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=158ACF226647DF2AA0266E1FF7A7EF59
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "user@gmail.com",
+  "password": "password",
+  "firstName":  "Ivan",
+  "lastName": "Ivanov",
+  "phone":  " +74951234567"
+}
+
+###
+
+POST http://localhost:8080/register
+Content-Type: application/json
+Content-Length: 137
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=158ACF226647DF2AA0266E1FF7A7EF59
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "user@gmail.com",
+  "password": "password",
+  "firstName":  "Ivan",
+  "lastName": "Ivanov",
+  "phone":  " +74951234567"
+}
+
+<> 2023-03-10T192449.500.json
+
+###
+
+POST http://localhost:8080/login
+Content-Type: application/json
+Content-Length: 61
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=158ACF226647DF2AA0266E1FF7A7EF59
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "admin@gmail.com",
+  "password": "password"
+}
+
+<> 2023-03-10T192322.200.json
+
+###
+
+POST http://localhost:8080/login
+Content-Type: application/json
+Content-Length: 63
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=158ACF226647DF2AA0266E1FF7A7EF59
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "vasilyd@gmail.com",
+  "password": "password"
+}
+
+###
+
+POST http://localhost:8080/login
+Content-Type: application/json
+Content-Length: 63
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=158ACF226647DF2AA0266E1FF7A7EF59
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "vasilyd@gmail.com",
+  "password": "password"
+}
+
+###
+
+POST http://localhost:8080/register
+Content-Type: application/json
+Content-Length: 140
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=158ACF226647DF2AA0266E1FF7A7EF59
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "admin@gmail.com",
+  "password": "password",
+  "firstName":  "Admin",
+  "lastName": "Adminov",
+  "phone":  " +74958901234"
+}
+
+###
+
+POST http://localhost:8080/register
+Content-Type: application/json
+Content-Length: 140
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=158ACF226647DF2AA0266E1FF7A7EF59
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "admin@gmail.com",
+  "password": "password",
+  "firstName":  "Admin",
+  "lastName": "Adminov",
+  "phone":  " +74958901234"
+}
+
+###
+
 POST http://localhost:8080/api/socks/income
 Authorization: Basic user@gmail.com password
 Content-Type: application/json

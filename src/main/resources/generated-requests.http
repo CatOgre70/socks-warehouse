@@ -26,10 +26,10 @@ POST http://localhost:8080/register
 Content-Type: application/json
 
 {
-  "username": "vasilyd@gmail.com",
+  "username": "admin@gmail.com",
   "password": "password",
-  "firstName":  "Vasily",
-  "lastName": "Demin",
+  "firstName":  "Admin",
+  "lastName": "Adminov",
   "phone":  " +74958901234"
 }
 
@@ -38,7 +38,7 @@ POST http://localhost:8080/login
 Content-Type: application/json
 
 {
-  "username": "vasilyd@gmail.com",
+  "username": "admin@gmail.com",
   "password": "password"
 }
 
@@ -46,7 +46,7 @@ Content-Type: application/json
 ### Post request to add new socks on stock
 POST http://localhost:8080/api/socks/income
 Content-Type: application/json
-Authorization: Basic vasilyd@gmail.com password
+Authorization: Basic admin@gmail.com password
 
 {
   "color" : "Red",
@@ -64,4 +64,16 @@ Authorization: Basic user@gmail.com password
   "color" : "Green",
   "cottonPart" : 80,
   "quantity" : 300
+}
+
+###
+### Post request to remove socks from stock
+POST http://localhost:8080/api/socks/outcome
+Content-Type: application/json
+Authorization: Basic user@gmail.com password
+
+{
+  "color" : "Green",
+  "cottonPart" : 80,
+  "quantity" : 100
 }

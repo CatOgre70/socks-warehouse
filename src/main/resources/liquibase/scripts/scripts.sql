@@ -38,3 +38,11 @@ CREATE TABLE invoices(
                          quantity integer,
                          wh_operation varchar(255)
 );
+
+-- changeset vasilydemin:2
+INSERT INTO users(email, first_name, last_name, username, password, phone, role, reg_date, enabled)
+VALUES('admin@gmail.com', 'Admin', 'Adminov', 'admin@gmail.com',
+       '{bcrypt}$2a$10$ooiRA3czh6yKJWouSGZmAukQQBtk9CzyOWpYvUbLi1kQ/Q9E082i.', '+7(900)8901234',
+       'ADMIN', '2023-03-10', true);
+INSERT INTO authorities(username, authority)
+VALUES('admin@gmail.com', 'ROLE_ADMIN');
