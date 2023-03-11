@@ -42,7 +42,8 @@ public class WebSecurityConfig {
                         .mvcMatchers("/api/**", "/users/**").authenticated()
                 )
                 .cors().and()
-                .httpBasic(withDefaults());
+                .httpBasic(withDefaults())
+                .logout();
         return http.build();
     }
 

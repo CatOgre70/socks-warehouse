@@ -30,7 +30,7 @@ public class AuthController {
     }
 
     @Operation(
-            summary = "login - Авторизация Пользователя",
+            summary = "login - user authorization",
             operationId = "login",
             requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
                     content = @Content(
@@ -79,48 +79,6 @@ public class AuthController {
         }
     }
 
-    @Operation(
-            summary = "Регистрация Пользователя",
-            operationId = "register",
-            requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
-                    content = @Content(
-                            mediaType = MediaType.APPLICATION_JSON_VALUE,
-                            schema = @Schema(implementation = RegReqDto.class)
-                    )
-            ),
-            responses = {
-                    @ApiResponse(
-                            responseCode = "200",
-                            description = "OK",
-                            content = @Content(
-                                    mediaType = MediaType.APPLICATION_JSON_VALUE,
-                                    schema = @Schema(implementation = User.class)
-                            )
-                    ),
-                    @ApiResponse(
-                            responseCode = "401",
-                            description = "Unauthorized",
-                            content = @Content(mediaType = MediaType.TEXT_HTML_VALUE)
-                    ),
-                    @ApiResponse(
-                            responseCode = "403",
-                            description = "Forbidden",
-                            content = @Content(mediaType = MediaType.TEXT_HTML_VALUE)
-                    ),
-                    @ApiResponse(
-                            responseCode = "404",
-                            description = "Not Found",
-                            content = @Content(mediaType = MediaType.TEXT_HTML_VALUE)
-                    )},
-            tags = "Authorization"
-    )
-    @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody RegReqDto req) {
-        UserRole role = req.getRole() == null ? USER : req.getRole();
-        if (authService.register(req, role)) {
-            return ResponseEntity.ok().build();
-        } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-        }
-    }
+
+
 }

@@ -1,3 +1,29 @@
+POST http://localhost:8080/logout
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=17CDC04756A8ADEF4FEED7F9CB39AB34
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+POST http://localhost:8080/login
+Content-Type: application/json
+Content-Length: 61
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.6)
+Cookie: JSESSIONID=17CDC04756A8ADEF4FEED7F9CB39AB34
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "admin@gmail.com",
+  "password": "password"
+}
+
+<> 2023-03-11T204900.200.json
+
+###
+
 POST http://localhost:8080/api/socks/outcome
 Authorization: Basic user@gmail.com password
 Content-Type: application/json
