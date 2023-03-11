@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import pro.sky.sockswarehouse.dto.InvoiceDto;
 import pro.sky.sockswarehouse.model.Invoice;
 import pro.sky.sockswarehouse.service.InvoiceService;
-import pro.sky.sockswarehouse.service.UserService;
 
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class InvoiceController {
 
     private final InvoiceService invoiceService;
 
-    public InvoiceController(InvoiceService invoiceService, UserService userService){
+    public InvoiceController(InvoiceService invoiceService){
         this.invoiceService = invoiceService;
     }
 
