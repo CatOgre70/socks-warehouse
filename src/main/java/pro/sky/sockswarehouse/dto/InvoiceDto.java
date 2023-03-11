@@ -13,6 +13,7 @@ public class InvoiceDto {
 
     private Long id;
     private LocalDateTime localDateTime;
+    private Long userId;
     private String userFullName;
     private String userEmail;
     private String UserRole;
