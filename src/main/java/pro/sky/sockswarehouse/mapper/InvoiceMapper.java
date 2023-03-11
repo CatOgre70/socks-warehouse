@@ -14,7 +14,7 @@ import java.util.Optional;
 public class InvoiceMapper {
 
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public InvoiceMapper(UserRepository userRepository){
         this.userRepository = userRepository;

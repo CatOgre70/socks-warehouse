@@ -32,8 +32,7 @@ public class SocksController {
                             responseCode = "200",
                             description = "OK",
                             content = @Content(
-                                    mediaType = MediaType.APPLICATION_JSON_VALUE,
-                                    schema = @Schema(implementation = Integer.class)
+                                    mediaType = MediaType.TEXT_HTML_VALUE
                             )
                     )},
             tags = "Socks"

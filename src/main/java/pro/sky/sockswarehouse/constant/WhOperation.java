@@ -14,7 +14,7 @@ public enum WhOperation {
         this.operationName = opName;
     }
 
-    private static Map<String, WhOperation> WH_OPERATION_BY_NAME = new HashMap<>();
+    private final static Map<String, WhOperation> WH_OPERATION_BY_NAME = new HashMap<>();
 
     static {
         for(WhOperation whOperation : values()){

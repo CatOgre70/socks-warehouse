@@ -14,7 +14,7 @@ public enum SocksColorsTable {
 
     public final String colorName;
 
-    private SocksColorsTable(String colorName){
+    SocksColorsTable(String colorName){
         this.colorName = colorName;
     }
 

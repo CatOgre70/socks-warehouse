@@ -28,7 +28,7 @@ public class UserService {
 
     /**
      * Метод, который получает из БД Пользователя по его ИД номеру
-     * @param userID
+     * @param userID user id to find the user
      * @return представление Пользователя
      */
     public User getUserByID(Long userID) {
@@ -41,7 +41,7 @@ public class UserService {
 
     /**
      * Метод, который выводит информацию о Пользователе (DTO)
-     * @param inpUser
+     * @param inpUser User to be outputted
      * @return представление Пользователя
      */
     public UserDto getUserDto(User inpUser) {
@@ -50,8 +50,8 @@ public class UserService {
 
     /**
      * Метод, смены пароля Пользователя
-     * @param authUserName
-     * @param newPassword
+     * @param authUserName - Username in String format
+     * @param newPassword - New password
      * @return Возвращает DTO Пользователя
      */
     public UserDto updatePassword(String authUserName, NewPassword newPassword){
@@ -70,9 +70,9 @@ public class UserService {
     }
     /**
      * Метод, который вносит изменения в профиль Пользователя
-     * @param authUserName
-     * @param inpUserDto
-     * @return
+     * @param authUserName - Username in String format
+     * @param inpUserDto - UserDto with information for update
+     * @return - UserDto with updated fields
      */
     public UserDto updateUser(UserDto inpUserDto, String authUserName) {
         Long id = getUserIdByName(authUserName);
@@ -81,14 +81,16 @@ public class UserService {
         userFound.setLastName(inpUserDto.getLastName());
         userFound.setPhone(inpUserDto.getPhone());
         userFound.setRegDate(inpUserDto.getRegistrationDate());
+        userFound.setRole(inpUserDto.getRole());
+        userFound.setEmail(inpUserDto.getEmail());
         userRepository.save(userFound);
         return userMapper.entityToDto(userFound);
     }
 
     /**
      * Метод, поиска ИД Пользователя по его Логину
-     * @param name
-     * @return ИД Пользователя
+     * @param name - Username
+     * @return Used id
      */
     public Long getUserIdByName(String name) {
         User user = userRepository.findUserByEmail(name).orElseThrow();
@@ -97,8 +99,8 @@ public class UserService {
 
     /**
      * Метод, поиска Пользователя по его Логину
-     * @param name
-     * @return ИД Пользователя
+     * @param name - Username
+     * @return - User id
      */
     public User getUserByName(String name) {
         return userRepository.findUserByEmail(name).orElseThrow();
