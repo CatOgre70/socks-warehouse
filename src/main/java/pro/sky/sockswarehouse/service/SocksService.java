@@ -53,9 +53,10 @@ public class SocksService {
             socks.setQuantity(socksFound.get().getQuantity() + socks.getQuantity());
             socks.setId(socksFound.get().getId());
         }
-        socks = socksRepository.save(socks);
+        Socks socksOnStock = socksRepository.save(socks);
+        socks.setQuantity(socksDto.getQuantity());
         saveInvoiceInRepository(socks, WhOperation.INCOME, authentication);
-        return ResponseEntity.ok(socksMapper.entityToDto(socks));
+        return ResponseEntity.ok(socksMapper.entityToDto(socksOnStock));
     }
 
     public ResponseEntity<SocksDto> removeSocks(SocksDto socksDto, Authentication authentication) {
@@ -73,9 +74,10 @@ public class SocksService {
             socks.setQuantity(socksFound.get().getQuantity() - socks.getQuantity());
             socks.setId(socksFound.get().getId());
         }
-        socks = socksRepository.save(socks);
+        Socks socksOnStock = socksRepository.save(socks);
+        socks.setQuantity(socksDto.getQuantity());
         saveInvoiceInRepository(socks, WhOperation.OUTCOME, authentication);
-        return ResponseEntity.ok(socksMapper.entityToDto(socks));
+        return ResponseEntity.ok(socksMapper.entityToDto(socksOnStock));
     }
 
     /**
@@ -118,24 +120,48 @@ public class SocksService {
         invoiceRepository.save(invoice);
     }
 
-    public ResponseEntity<Integer> getSocks(String color, String operation, Integer cottonPart) {
+    /**
+     *
+     * @param color socks color
+     * @param operation operation type (equal, lessThan, moreThan)
+     * @param cottonPart socks cotton part for comparison
+     * @return number of socks on stock satisfying the conditions of the request
+     */
+    public ResponseEntity<String> getSocks(String color, String operation, Integer cottonPart) {
 
         Operation op = Operation.getOperationByName(operation);
         if(operation == null || op == null || cottonPart < 0 || cottonPart > 100) {
             return ResponseEntity.badRequest().build();
         }
         if(color != null && SocksColorsTable.getSocksColorByColor(color) == null) {
-            return ResponseEntity.ok(0);
+            return ResponseEntity.ok("0");
         }
+        Integer result;
         switch(op) {
             case EQUAL -> {
-                return ResponseEntity.ok(socksRepository.getSocksEqual(color, cottonPart));
+                result = socksRepository.getSocksEqual(color, cottonPart);
+                if(result != null) {
+                    return ResponseEntity.ok(result.toString());
+                } else {
+                    return ResponseEntity.ok("0");
+                }
             }
             case LESS_THAN -> {
-                return ResponseEntity.ok(socksRepository.getSocksLessThan(color, cottonPart));
+                result = socksRepository.getSocksLessThan(color, cottonPart);
+                if(result != null) {
+                    return ResponseEntity.ok(result.toString());
+                } else {
+                    return ResponseEntity.ok("0");
+                }
+
             }
             case MORE_THAN -> {
-                return ResponseEntity.ok(socksRepository.getSocksMoreThan(color, cottonPart));
+                result = socksRepository.getSocksMoreThan(color, cottonPart);
+                if(result != null) {
+                    return ResponseEntity.ok(result.toString());
+                } else {
+                    return ResponseEntity.ok("0");
+                }
             }
             default -> {
                 return ResponseEntity.badRequest().build();
