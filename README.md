@@ -27,5 +27,5 @@ application on JVM):
 
 http://46.188.28.196:8080/swagger-ui.html
 
-## Команда разработки
-* [Василий Демин](https://github.com/CatOgre70)
+## Development team
+* [Vasily Demin](https://github.com/CatOgre70)
