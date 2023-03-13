@@ -135,15 +135,32 @@ public class SocksService {
         if(color != null && SocksColorsTable.getSocksColorByColor(color) == null) {
             return ResponseEntity.ok("0");
         }
+        Integer result;
         switch(op) {
             case EQUAL -> {
-                return ResponseEntity.ok(socksRepository.getSocksEqual(color, cottonPart).toString());
+                result = socksRepository.getSocksEqual(color, cottonPart);
+                if(result != null) {
+                    return ResponseEntity.ok(result.toString());
+                } else {
+                    return ResponseEntity.ok("0");
+                }
             }
             case LESS_THAN -> {
-                return ResponseEntity.ok(socksRepository.getSocksLessThan(color, cottonPart).toString());
+                result = socksRepository.getSocksLessThan(color, cottonPart);
+                if(result != null) {
+                    return ResponseEntity.ok(result.toString());
+                } else {
+                    return ResponseEntity.ok("0");
+                }
+
             }
             case MORE_THAN -> {
-                return ResponseEntity.ok(socksRepository.getSocksMoreThan(color, cottonPart).toString());
+                result = socksRepository.getSocksMoreThan(color, cottonPart);
+                if(result != null) {
+                    return ResponseEntity.ok(result.toString());
+                } else {
+                    return ResponseEntity.ok("0");
+                }
             }
             default -> {
                 return ResponseEntity.badRequest().build();
