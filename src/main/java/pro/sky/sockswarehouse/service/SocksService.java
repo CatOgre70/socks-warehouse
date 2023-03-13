@@ -74,9 +74,10 @@ public class SocksService {
             socks.setQuantity(socksFound.get().getQuantity() - socks.getQuantity());
             socks.setId(socksFound.get().getId());
         }
-        socks = socksRepository.save(socks);
+        Socks socksOnStock = socksRepository.save(socks);
+        socks.setQuantity(socksDto.getQuantity());
         saveInvoiceInRepository(socks, WhOperation.OUTCOME, authentication);
-        return ResponseEntity.ok(socksMapper.entityToDto(socks));
+        return ResponseEntity.ok(socksMapper.entityToDto(socksOnStock));
     }
 
     /**
