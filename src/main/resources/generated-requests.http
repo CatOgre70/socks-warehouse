@@ -1,0 +1,83 @@
+###
+### User0 registration
+POST http://localhost:8080/register
+Content-Type: application/json
+
+{
+  "username": "user@gmail.com",
+  "password": "password",
+  "firstName":  "Ivan",
+  "lastName": "Ivanov",
+  "phone":  " +74951234567"
+}
+
+###
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "user@gmail.com",
+  "password": "password"
+}
+
+###
+### User1  registration
+POST http://localhost:8080/register
+Content-Type: application/json
+
+{
+  "username": "admin@gmail.com",
+  "password": "password",
+  "firstName":  "Admin",
+  "lastName": "Adminov",
+  "phone":  " +74958901234"
+}
+
+###
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "admin@gmail.com",
+  "password": "password"
+}
+
+###
+### Post request to add new socks on stock
+POST http://localhost:8080/api/socks/income
+Content-Type: application/json
+Authorization: Basic admin@gmail.com password
+
+{
+  "color" : "Red",
+  "cottonPart" : 90,
+  "quantity" : 100
+}
+
+###
+### Post request to add new socks on stock
+POST http://localhost:8080/api/socks/income
+Content-Type: application/json
+Authorization: Basic user@gmail.com password
+
+{
+  "color" : "Green",
+  "cottonPart" : 80,
+  "quantity" : 300
+}
+
+###
+### Post request to remove socks from stock
+POST http://localhost:8080/api/socks/outcome
+Content-Type: application/json
+Authorization: Basic user@gmail.com password
+
+{
+  "color" : "Green",
+  "cottonPart" : 80,
+  "quantity" : 100
+}
+
+### Logout from application
+POST http://localhost:8080/logout
+
