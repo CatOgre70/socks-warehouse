@@ -39,7 +39,7 @@ public class SocksController {
     )
     @PreAuthorize("isAuthenticated()")
     @GetMapping
-    ResponseEntity<Integer> getSocks(
+    ResponseEntity<String> getSocks(
             @Parameter(description = "Socks color to find", schema = @Schema(implementation = String.class))
             @RequestParam(required = false) String color,
             @Parameter(description = "Comparison operator", schema = @Schema(implementation = String.class))
@@ -59,7 +59,7 @@ public class SocksController {
                             examples = {@ExampleObject(name = "socksDto in JSON format",
                                     value = """
                                             {"color":"Red",
-                                            "cottonPart":90
+                                            "cottonPart":90,
                                             "quantity":100
                                             }"""
                             )}
@@ -95,7 +95,7 @@ public class SocksController {
                             examples = {@ExampleObject(name = "socksDto in JSON format",
                                     value = """
                                             {"color":"Red",
-                                            "cottonPart":90
+                                            "cottonPart":90,
                                             "quantity":100
                                             }"""
                             )}
