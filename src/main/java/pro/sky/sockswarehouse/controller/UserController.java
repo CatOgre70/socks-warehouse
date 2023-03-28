@@ -121,7 +121,7 @@ public class UserController {
                                     "lastName" : "Alexandrov",
                                     "phone" : "+79008007060",
                                     "role" : "User",
-                                    "registrationDate" : 2023-03-10T18:25:43.511Z
+                                    "registrationDate" : "2023-03-10T18:25:43.511Z"
                                     }"""
                             )}
                     )
