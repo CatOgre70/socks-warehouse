@@ -31,7 +31,8 @@ public class SocksService {
     private final SocksMapper socksMapper;
     private final UserRepository userRepository;
 
-    public SocksService(SocksRepository socksRepository, InvoiceRepository invoiceRepository, SocksMapper socksMapper, UserRepository userRepository){
+    public SocksService(SocksRepository socksRepository, InvoiceRepository invoiceRepository,
+                        SocksMapper socksMapper, UserRepository userRepository){
         this.socksRepository = socksRepository;
         this.invoiceRepository = invoiceRepository;
         this.socksMapper = socksMapper;
