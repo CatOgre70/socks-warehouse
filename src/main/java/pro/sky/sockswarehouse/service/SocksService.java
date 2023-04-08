@@ -38,7 +38,12 @@ public class SocksService {
         this.userRepository = userRepository;
     }
 
-
+    /**
+     * Method to add socks to the stock
+     * @param socksDto type and number of socks to add to the stock
+     * @param authentication authentication data from browser
+     * @return SocksDto object with total number of selected type socks on the stock after adding
+     */
     public ResponseEntity<SocksDto> addSocks(SocksDto socksDto, Authentication authentication) {
         // User input checking and reactions
         if(!socksDtoChecking(socksDto)) {
@@ -59,6 +64,12 @@ public class SocksService {
         return ResponseEntity.ok(socksMapper.entityToDto(socksOnStock));
     }
 
+    /**
+     * Method to remove socks from stock
+     * @param socksDto type and number of socks to remove from the stock
+     * @param authentication authentication data from browser
+     * @return SocksDto object with total number of selected type socks on the stock after removing
+     */
     public ResponseEntity<SocksDto> removeSocks(SocksDto socksDto, Authentication authentication) {
         // User input checking and reactions
         if(!socksDtoChecking(socksDto)) {
@@ -121,7 +132,7 @@ public class SocksService {
     }
 
     /**
-     *
+     * Method to calculate socks of selected type number on stock
      * @param color socks color
      * @param operation operation type (equal, lessThan, moreThan)
      * @param cottonPart socks cotton part for comparison
